@@ -1,10 +1,9 @@
 package com.kwai.koom.javaoom;
 
 import android.app.Application;
+import android.arch.lifecycle.ProcessLifecycleOwner;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.util.Log;
-import androidx.lifecycle.ProcessLifecycleOwner;
 
 import com.kwai.koom.javaoom.analysis.HeapAnalysisListener;
 import com.kwai.koom.javaoom.analysis.HeapAnalysisTrigger;

@@ -1,9 +1,8 @@
 package com.kwai.koom.javaoom.analysis;
 
 import android.app.Application;
-import android.util.Log;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.OnLifecycleEvent;
 
 import com.kwai.koom.javaoom.common.KGlobalConfig;
 import com.kwai.koom.javaoom.common.KLog;

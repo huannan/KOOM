@@ -16,8 +16,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.StatFs;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
-import androidx.annotation.RequiresApi;
 
 /**
  * Copyright 2020 Kwai, Inc. All rights reserved.
