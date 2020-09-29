@@ -10,6 +10,7 @@ An OOM killer on mobile platform by Kwai.
 1. 只保留了armeabi
 2. 本代码是根据master分支，自行适配非AndroidX。官网上面的no androidx分支有问题
 3. 构建与接入：构建后请将java-oom-release.aar、kwai-linker-release.aar、shark.jar、xhook-release.aar拷贝到主工程
+4. 添加manualTriggerOnCrashBlock用于在APP发生OOM之后，进行一次强制阻塞线程的trigger
 
 ## Introduction
 

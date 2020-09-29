@@ -269,4 +269,9 @@ class KOOMInternal implements HeapDumpListener, HeapAnalysisListener {
   public void manualTriggerOnCrash() {
     koomHandler.post(this::manualTriggerOnCrashInternal);
   }
+
+  public void manualTriggerOnCrashBlock() {
+    heapDumpTrigger.setTriggered(false);
+    manualTriggerOnCrashInternal();
+  }
 }

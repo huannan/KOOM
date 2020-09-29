@@ -87,6 +87,10 @@ public class HeapDumpTrigger implements KTrigger {
 
   private boolean triggered;
 
+  public void setTriggered(boolean triggered) {
+    this.triggered = triggered;
+  }
+
   @Override
   public void trigger(TriggerReason reason) {
     if (triggered) {

@@ -1,7 +1,6 @@
 package com.kwai.koom.javaoom;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.kwai.koom.javaoom.analysis.HeapAnalysisTrigger;
 import com.kwai.koom.javaoom.common.KConfig;
@@ -191,6 +190,10 @@ public class KOOM {
    */
   public void manualTriggerOnCrash() {
     internal.manualTriggerOnCrash();
+  }
+
+  public void manualTriggerOnCrashBlock() {
+    internal.manualTriggerOnCrashBlock();
   }
 
   /***
