@@ -20,13 +20,11 @@ package com.kwai.koom.javaoom.monitor;
 public class HeapThreshold implements Threshold {
 
   private float heapRatioInPercent;
-  private float heapMaxRatioInPercent;
   private int overTimes;
   private int pollInterval;
 
-  public HeapThreshold(float heapRatioInPercent, float heapMaxRatioInPercent, int overTimes, int pollInterval) {
+  public HeapThreshold(float heapRatioInPercent, int overTimes, int pollInterval) {
     this.heapRatioInPercent = heapRatioInPercent;
-    this.heapMaxRatioInPercent = heapMaxRatioInPercent;
     this.overTimes = overTimes;
     this.pollInterval = pollInterval;
   }
@@ -34,11 +32,6 @@ public class HeapThreshold implements Threshold {
   @Override
   public float value() {
     return heapRatioInPercent;
-  }
-
-  @Override
-  public float maxValue() {
-    return heapMaxRatioInPercent;
   }
 
   @Override

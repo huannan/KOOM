@@ -1,10 +1,10 @@
 package com.kwai.koom.javaoom.common;
 
-import com.kwai.koom.javaoom.monitor.HeapThreshold;
+import static com.kwai.koom.javaoom.common.KGlobalConfig.KOOM_DIR;
 
 import java.io.File;
 
-import static com.kwai.koom.javaoom.common.KGlobalConfig.KOOM_DIR;
+import com.kwai.koom.javaoom.monitor.HeapThreshold;
 
 /**
  * Copyright 2020 Kwai, Inc. All rights reserved.
@@ -59,7 +59,6 @@ public class KConfig {
   public static class KConfigBuilder {
 
     private float heapRatio;
-    private float heapMaxRatio;
     private int heapOverTimes;
     private int heapPollInterval;
 
@@ -69,7 +68,6 @@ public class KConfig {
 
     public KConfigBuilder() {
       this.heapRatio = KConstants.HeapThreshold.getDefaultPercentRation();
-      this.heapMaxRatio = KConstants.HeapThreshold.getDefaultMaxPercentRation();
       this.heapOverTimes = KConstants.HeapThreshold.OVER_TIMES;
       this.heapPollInterval = KConstants.HeapThreshold.POLL_INTERVAL;
       File cacheFile = KGlobalConfig.getApplication().getCacheDir();
@@ -84,11 +82,6 @@ public class KConfig {
 
     public KConfigBuilder heapRatio(float heapRatio) {
       this.heapRatio = heapRatio;
-      return this;
-    }
-
-    public KConfigBuilder heapMaxRatio(float heapMaxRatio) {
-      this.heapMaxRatio = heapMaxRatio;
       return this;
     }
 
@@ -108,11 +101,8 @@ public class KConfig {
     }
 
     public KConfig build() {
-      if (heapRatio > heapMaxRatio) {
-        throw new RuntimeException("heapMaxRatio be greater than heapRatio");
-      }
       HeapThreshold heapThreshold = new HeapThreshold(heapRatio,
-              heapMaxRatio, heapOverTimes, heapPollInterval);
+          heapOverTimes, heapPollInterval);
       return new KConfig(heapThreshold, this.rootDir, this.processName);
     }
   }
