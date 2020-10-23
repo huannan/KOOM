@@ -255,8 +255,8 @@ class KOOMInternal implements HeapDumpListener, HeapAnalysisListener {
     koomHandler.post(this::manualTriggerInternal);
   }
 
-
   private void manualTriggerOnCrashInternal() {
+    resetTriggerState();
     if (!started) {
       startInternal();
     }
@@ -271,7 +271,10 @@ class KOOMInternal implements HeapDumpListener, HeapAnalysisListener {
   }
 
   public void manualTriggerOnCrashBlock() {
-    heapDumpTrigger.setTriggered(false);
     manualTriggerOnCrashInternal();
+  }
+
+  public void resetTriggerState() {
+    heapDumpTrigger.setTriggered(false);
   }
 }

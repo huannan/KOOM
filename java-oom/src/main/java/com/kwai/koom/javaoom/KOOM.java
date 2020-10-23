@@ -196,6 +196,10 @@ public class KOOM {
     internal.manualTriggerOnCrashBlock();
   }
 
+  public void resetTriggerState() {
+    internal.resetTriggerState();
+  }
+
   /***
    * Set a custom logger.
    * 
